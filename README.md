@@ -219,3 +219,95 @@ even_numbers.pop(0)
 even_numbers
 # => [4, 6, 8]
 ```
+
+## 제어문
+- 파이썬은 기본적으로 위에서부터 아래로 순차적으로 명령을 수행
+- 특정 상황에 따라 코드를 선택적으로 실행(분기/조건)하거나 계속하여 실행(반복)하는 제어가 필요
+
+## 조건문
+- 조건문은 참/거짓을 판단할 수 있는 조건식과 함께 사용
+
+### 조건문 기본 형식
+- expression에는 참/거짓에 대한 조건식
+    * 조건이 참인 경우, 이후 들여쓰기 되어있는 코드 블럭 실행
+    * 이외의 경우(거짓), else이후 들여쓰기 되어있는 코드 블럭 실행
+    ```bash
+    if <expression>:
+        # run this code
+    else:
+        # run this code
+    ```
+    ```bash
+    a = -10
+    if a >= 0:
+        print('양수')
+    else:
+        print('음수')
+    print(a)  # >> (음수)
+    ```
+### 복수 조건문
+- 복수의 조건식을 활용할 경우 elif를 활용하여 표현
+```bash
+if <expression>:
+    # code block
+elif <expression>:
+    # code block
+elif <expression>:
+    # code block
+else:
+    # code block
+```
+### 중첩 조건문
+- 조건문은 다른 조건문에 중첩되어 사용될 수 있음
+    * 들여쓰기를 유의하여 작성 !!
+    ```bash
+    if <expression>:
+        # code block
+        if <expression>:
+            # code block
+    else:
+        # code block
+    ```
+### range
+- 숫자의 시퀀스를 나타내기 위해 사용
+    * 기본형 : range(n)
+        * 0 부터 n-1 까지의 숫자의 시퀸스
+    * 범위 지정 : range(n,m)
+        * n 부터 m-1 까지의 숫자의 시퀸스
+    * 범위 및 스텝 지정 : range(n,m,s)
+        * n 부터 m-1 까지 s 만큼 증가시키는 숫자의 시퀀스
+- 변경 불가능하며(immutable), 반복 가능함(iterable)
+
+## 반복문
+- 특정 조건을 도달할 때까지, 계속 반복되는 일련의 문장
+
+### 반복문의 종류
+- while문
+    * 종료조건에 해당하는 코드를 통해 반복문을 종료시켜야 함
+- for문
+    * 반복가능한 객체를 모두 순회하면 종료(별도의 종료조건이 필요없음)
+- 반복 제어
+    * break, continue, for-else
+
+### while문
+- while문은 조건식이 참인 경우 반복적으로 코드를 실행
+    * 조건이 참인 경우 들여쓰기 되어있는 코드 블록이 실행됨
+    * 코드 블록이 모두 실행되고, 다시 조건식을 검사하며 반복적으로 실행됨
+    * while문은 무한 루프를 하지 않도록 종료조건이 반드시 필요
+
+### for문
+- for문은 시퀀스(string, tuple, list, range)를 포함한 순회가능한 객체요소를 모두 순회함
+    * 종료조건 필요없음
+```bash
+chars = input() > hi
+for char in chars:
+    print(char)
+h
+i
+```
+### 반복문 제어
+- break : 반복문을 종료
+- continue : continue 이후의 코드블록은 수행하지 않고, 다음 반복을 수행
+- for-else : 끝까지 반복문을 실행한 이후에 else문 실행
+    * break를 통해 종료되는 경우 else문은 실행되지 않음
+    
